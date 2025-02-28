@@ -9,6 +9,7 @@ import {
   forgotPasswordController,
   verifyForgotPasswordOtp,
   resetpassword,
+  refreshToken,
 } from '../controllers/user.controller.js';
 
 import auth from '../middleware/auth.js';
@@ -25,6 +26,7 @@ userRouter.put('/update-user', auth, updateUserDetails);
 userRouter.put('/forgot-password', forgotPasswordController);
 userRouter.put('/verify-forgot-password-otp', verifyForgotPasswordOtp);
 userRouter.put('/reset-password', resetpassword);
+userRouter.post('/refresh-token', refreshToken);
 
 export default userRouter;
 // The user.route.js file contains the userRouter object, which is an instance of the Express Router. The userRouter object is used to define the routes for user-related operations in the application.
