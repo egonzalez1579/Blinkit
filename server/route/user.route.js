@@ -1,20 +1,13 @@
 import { Router } from 'express';
-import {
-  forgotPasswordController,
-  loginController,
-  logoutController,
-  refreshToken,
-  registerUserController,
-  resetpassword,
-  updateUserDetails,
-  uploadAvatar,
-  userDetails,
-  verifyEmailController,
-  verifyForgotPasswordOtp,
-} from '../controllers/user.controller.js';
 import { registerUserController } from '../controllers/user.controller.js';
+import { verifyEmailController } from '../controllers/user.controller.js';
+import { loginController } from '../controllers/user.controller.js';
+
+const userRouter = Router();
 
 userRouter.post('/register', registerUserController);
+userRouter.post('/verify-email', verifyEmailController);
+userRouter.post('/login', loginController);
 
 export default userRouter;
 // The user.route.js file contains the userRouter object, which is an instance of the Express Router. The userRouter object is used to define the routes for user-related operations in the application.
